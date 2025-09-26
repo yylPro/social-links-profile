@@ -1,0 +1,101 @@
+body{
+    background-color: #141414;
+    font-family: 'Figtree',sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;/* 主轴（水平）居中 */
+    align-items: center; /* 交叉轴（垂直）居中 */
+    min-height: 100vh; /* 确保 body 至少占据视口 100% 的高度 */
+    margin: 0; /* 移除浏览器默认外边距 */
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.profile-card{
+    background-color: #1F1F1F;
+    max-width: 427px;
+    width: 90%; /*小屏幕占据90%*/
+    padding:20px;
+    margin: auto;
+    border-radius: 12px; /*设置圆角*/
+    text-align: center;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.4);
+}
+
+.profile-header{
+    margin-bottom: 24px; /*设置外边距*/
+}
+
+.author-avatar{
+    width:90px;
+    height: 90px;
+    border-radius: 50%; /*使图片成为圆形*/
+    margin-bottom: 24px;
+}
+
+.profile-name{
+    font-size:24px;
+    font-weight: 800;
+}
+
+.profile-location{
+    color: #B7E42F;
+    margin-top: 8px; /*在上面流出8像素*/
+    margin-bottom: 24px;
+}
+
+
+.social-links-list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;/*用于设计子元素之间的距离*/
+}
+
+.social-link-button{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #333333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.2s,color 0.2s;
+}
+
+/*交互状态：Hover & Focus*/
+.social-link-button:hover,.social-link-button:focus{
+    background-color: #C4F82A;
+    color: #1F1F1F;
+    outline: none;
+}
+
+.attribution {
+    margin-top: auto; /* ***关键：将 attribution 推向底部，同时保持在 Flex 容器内*** */
+    margin-bottom: 20px; /* 距底部 20px 间距 */
+    font-size: 11px;
+    text-align: center;
+    color: #FFFFFF; /* 默认文本颜色 */
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); /* 链接颜色 */
+    text-decoration: none;     /* 移除下划线 */
+}
+.attribution a:hover {
+    text-decoration: underline; /* 链接悬停时显示下划线 */
+}
+
+/* 媒体查询：响应式设计 */
+@media (max-width: 375px) {
+    .profile-card {
+        width: calc(100% - 48px); /* 在小屏幕上适应宽度，留出左右边距 */
+        margin: 24px auto; /* 防止卡片紧贴屏幕边缘 */
+    }
+
+    .attribution {
+        padding: 0 10px; /* 小屏幕上防止attribution内容溢出 */
+        white-space: normal; /* 允许换行 */
+    }
+}
